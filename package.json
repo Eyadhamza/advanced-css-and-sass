@@ -1,0 +1,23 @@
+{
+  "name": "nature",
+  "version": "1.0.0",
+  "description": "\"# advanced-css-and-sass\"",
+  "main": "index.js",
+  "scripts": {
+      "dev": "node-sass sass/main.scss css/style.css ",
+      "watch": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eyadhamza/advanced-css-and-sass.git"
+  },
+  "author": "eyadhamza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Eyadhamza/advanced-css-and-sass/issues"
+  },
+  "homepage": "https://github.com/Eyadhamza/advanced-css-and-sass#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
