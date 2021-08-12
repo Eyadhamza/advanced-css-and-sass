@@ -1,0 +1,83 @@
+* {
+    margin:0;
+    padding:0;
+}
+$color-primary: #f9ed69; //yellow
+$color-secondary: #f08a5d;
+$color-tert:#b83b5e;
+$color-text-dark:blue;
+$width-button: 150px;
+
+// are just a big element and variables that can hold values to be used repatedly whenever we need them
+
+@mixin clearfix{
+    &::after{
+        content:"";
+        clear:both;
+        display:table;
+    }
+}
+
+// we can also pass and recive arguments
+@mixin style-link-text($color){
+    text-decoration:none;
+    text-transform: uppercase;
+    color:$color;
+}
+
+@function divide($a, $b){
+    @return $a / $b;
+}
+
+nav {
+    margin:divide(60,2) * 1px;
+    // 30px just an example for calling functions
+    background-color:$color-primary;
+    @include clearfix
+}
+
+
+
+
+.navigation{
+    list-style:none;
+    float:left;
+    li {
+        // nesting, selecting li inside the navigation
+        display:inline-block;
+        margin-left:30px;
+
+        &:first-child{
+            margin:0;
+            // & writes the selector path up to this point, in this case navigation -> li : navigation li:first-child
+        }
+        a {
+            @include style-link-text($color-secondary)
+
+        }
+    }
+}
+.button{
+    float:right;
+}
+
+%btn-placeholder{
+    padding:10px;
+    display:inline-block;
+    text-align:center;
+    text-decoration:none;
+    border-radius:100px;
+    width : $width-button;
+}
+
+.btn-main{
+    &:link{
+        @extend %btn-placeholder;
+        background-color : $color-secondary;
+
+    }
+    &:hover{
+        @extend %btn-placeholder;
+        background-color : darken($color-secondary,15%);
+    }
+}
