@@ -1,0 +1,27 @@
+.row{
+    // max means that the width will
+    // adapt the size of the screen
+    // if it's small, it will take only
+    // 100% of the screen
+    max-width: $grid-width;
+    background-color: white;
+    // the auto means that left and right will be the same
+    // so the browser will make each 50%
+    // which is centered
+    margin: 0 auto ;
+
+    // .row:not()
+    // all the rows except the last child
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+    @include clearfix;
+    .col-1-of-2{
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+        background-color: orangered;
+        float: left;
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }
+    }
+}
