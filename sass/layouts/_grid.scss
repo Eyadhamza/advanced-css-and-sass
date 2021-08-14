@@ -4,7 +4,7 @@
     // if it's small, it will take only
     // 100% of the screen
     max-width: $grid-width;
-    background-color: white;
+
     // the auto means that left and right will be the same
     // so the browser will make each 50%
     // which is centered
@@ -22,7 +22,7 @@
     // ^ says start!
 
     [class^="col-"]{
-        background-color: orangered;
+
         float: left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;

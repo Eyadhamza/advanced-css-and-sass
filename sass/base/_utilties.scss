@@ -1,0 +1,11 @@
+.u-center-text{
+    text-align: center;
+}
+
+// we define utility classes as the margin
+// will defer each time we use it, so it won't
+// be reasonable to hardcode it in the component
+
+.mb-8{
+    margin-bottom: 8rem;
+}
